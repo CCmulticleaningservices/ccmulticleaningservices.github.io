@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handyman Pro LLC | Expert Home Repairs & Maintenance</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary: #f97316; /* Professional Construction Orange */
+    --primary-dark: #ea580c;
+    --secondary: #334155; /* Slate/Steel Grey */
+    --dark: #0f172a;
+    --text: #334155;
+    --muted: #64748b;
+    --bg: #f8fafc;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.98);
+    border-bottom: 2px solid var(--primary);
+    z-index: 100;
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 80px;
+  }
+  .nav-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--primary); }
+
+  .nav-cta {
+    background: var(--primary);
+    color: white !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--primary-dark); }
+
+  /* HERO */
+  .hero {
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6% 8%;
+    background: var(--white);
+  }
+  .hero-tag {
+    background: #ffedd5;
+    color: var(--primary-dark);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+  }
+
+  .hero-btns { display: flex; gap: 1rem; }
+  .btn-primary {
+    background: var(--dark);
+    color: white;
+    padding: 1.1rem 2.2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: transform 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); }
+
+  .hero-right {
+    background: var(--secondary);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right::after {
+    content: '';
+    position: absolute; width: 100%; height: 100%;
+    background: url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&q=80&w=1000') center/cover;
+    opacity: 0.3;
+  }
+
+  /* REVIEWS */
+  .reviews { padding: 6rem 8%; background: var(--bg); }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; text-align: center; margin-bottom: 3.5rem;
+    color: var(--dark);
+  }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+  }
+  .review-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--primary);
+  }
+  .stars { color: #fbbf24; margin-bottom: 1rem; font-size: 1.2rem; }
+  .review-text { font-size: 1rem; color: var(--text); margin-bottom: 1.5rem; line-height: 1.7; }
+  .reviewer { font-weight: 700; color: var(--dark); display: flex; align-items: center; gap: 8px; }
+  .reviewer::before { content: '✓'; color: #10b981; font-weight: 900; }
+
+  /* CONTACT SECTION */
+  .contact-bar {
+    background: var(--dark);
+    color: white;
+    padding: 4rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .contact-info h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .contact-info p { opacity: 0.7; }
+
+  /* CLAIM BANNER */
+  .claim-banner {
+    background: #f1f5f9; color: #475569; text-align: center;
+    padding: 0.8rem; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0;
+  }
+  .claim-banner a { color: var(--primary); font-weight: 700; text-decoration: none; }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .contact-bar { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="claim-banner">
+  Professional Site Preview for Handyman Pro LLC — <a href="mailto:hello@fire4biz.com">Own this professional presence for $249</a>
+</div>
+
+<nav>
+  <div class="nav-logo">Handyman <span>Pro</span> LLC</div>
+  <a href="tel:+18329306313" class="nav-cta">CALL +1 832-930-6313</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Licensed & Insured · Expert Repairs</div>
+    <h1>Your home deserves a <em>professional</em> touch.</h1>
+    <p>From quick fixes to major home improvements, we provide reliable handyman services you can trust. No job is too small for our expert team.</p>
+    <div class="hero-btns">
+      <a href="tel:+18329306313" class="btn-primary">Request a Quote</a>
+    </div>
+  </div>
+  <div class="hero-right"></div>
+</section>
+
+<section class="reviews" id="reviews">
+  <h2 class="section-title">Trusted by Your Neighbors</h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Had several nagging repairs around the house—a leaky faucet, a broken cabinet hinge, and some drywall patching. Handyman Pro arrived on time and finished everything perfectly in one visit."</p>
+      <div class="reviewer">Mark S., Houston</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Excellent craftsmanship. They helped me install new light fixtures and mount a large TV. Very clean work and they actually answered their phone when I called!"</p>
+      <div class="reviewer">Linda G.</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Professional, courteous, and efficient. It's hard to find a reliable handyman these days, but Handyman Pro LLC is now my go-to for all my rental property maintenance."</p>
+      <div class="reviewer">Robert D.</div>
+    </div>
+  </div>
+</section>
+
+<div class="contact-bar">
+  <div class="contact-info">
+    <h2>Ready to get started?</h2>
+    <p>Available Monday – Friday until 5:00 PM for all your home needs.</p>
+  </div>
+  <a href="tel:+18329306313" class="btn-primary" style="background: var(--primary);">Call +1 832-930-6313</a>
+</div>
+
+<footer style="padding: 4rem 8%; background: #0b0f1a; color: white; text-align: center;">
+  <p style="font-weight: 700; margin-bottom: 1rem;">Handyman Pro LLC</p>
+  <p style="opacity: 0.5; font-size: 0.85rem;">Professional Handyman/Handywoman/Handyperson Services in Texas.</p>
+</footer>
+
+</body>
+</html>
